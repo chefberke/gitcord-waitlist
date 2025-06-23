@@ -55,7 +55,7 @@ function WaitlistInput() {
           text: data.error || "Something went wrong",
         });
       }
-    } catch (error) {
+    } catch {
       setMessage({
         type: "error",
         text: "Failed to join waitlist. Please try again.",
