@@ -358,3 +358,22 @@ body {
     ),
     radial-gradient(at 82% 65%, rgba(91, 200, 152, 0.08) 0px, transparent 50%);
 }
+
+/* Scroll Down Animation */
+@keyframes scroll-down {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.animate-scroll-down {
+  animation: scroll-down 20s linear infinite;
+}
+
+/* Pause animation on hover */
+.animate-scroll-down:hover {
+  animation-play-state: paused;
+}
