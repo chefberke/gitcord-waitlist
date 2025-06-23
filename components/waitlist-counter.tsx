@@ -50,7 +50,7 @@ function WaitlistCounter() {
   }
 
   return (
-    <div className="flex flex-col items-center space-y-2">
+    <div className="flex flex-col items-center space-y-2 pl-2">
       <div className="flex items-baseline space-x-2">
         <span className="text-neutral-300">
           {count !== null ? count.toLocaleString() : "0"}

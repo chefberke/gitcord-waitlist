@@ -2,7 +2,7 @@ import React from "react";
 
 function AppPreview() {
   return (
-    <div className="w-full h-full bg-[#0a0a0a] overflow-hidden relative">
+    <div className="w-full h-full overflow-hidden relative">
       {/* Scrolling container */}
       <div className="animate-scroll-down">
         <div className="p-6 flex flex-col">
