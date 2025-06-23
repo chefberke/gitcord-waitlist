@@ -34,16 +34,13 @@ function WaitlistInput() {
     setRetryAfter(null);
 
     try {
-      const response = await fetch(
-        "https://api.gitcord.pro/api/waitlist/waitlist",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ email }),
-        }
-      );
+      const response = await fetch("/api/waitlist/waitlist", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
 
       const data = await response.json();
 

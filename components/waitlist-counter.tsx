@@ -8,9 +8,7 @@ function WaitlistCounter() {
 
   const fetchCount = async () => {
     try {
-      const response = await fetch(
-        "https://api.gitcord.pro/api/waitlist/count"
-      );
+      const response = await fetch("/api/waitlist/count");
       const data = await response.json();
       if (response.ok && data.success) {
         // Updated to handle new response format
