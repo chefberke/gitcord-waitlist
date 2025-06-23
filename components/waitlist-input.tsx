@@ -34,7 +34,7 @@ function WaitlistInput() {
     setRetryAfter(null);
 
     try {
-      const response = await fetch("/api/waitlist/waitlist", {
+      const response = await fetch("/api/waitlist", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
