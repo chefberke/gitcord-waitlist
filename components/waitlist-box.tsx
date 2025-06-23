@@ -12,7 +12,7 @@ function WaitlistBox() {
         <div className="flex flex-col items-center lg:items-start justify-center gap-4 flex-1 max-w-2xl">
           <div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl text-center lg:text-left font-semibold">
-              The open source way to <br /> Track GitHub activity
+              The open source way to monitor your GitHub
             </h1>
           </div>
           <div>

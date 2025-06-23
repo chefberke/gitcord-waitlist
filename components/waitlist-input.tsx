@@ -68,13 +68,13 @@ function WaitlistInput() {
   return (
     <div className="w-full max-w-3xl">
       <form onSubmit={handleSubmit} className="w-full space-y-4">
-        <div className="relative w-[340px]">
+        <div className="relative w-full max-w-md mx-auto">
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email"
-            className="w-full pl-6 pr-40 py-4 text-base text-white bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl focus:outline-none focus:border-white/20 focus:bg-white/10 transition-all duration-300 placeholder:text-white/40"
+            className="w-full pl-6 pr-32 sm:pr-40 py-4 text-base text-white bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl focus:outline-none focus:border-white/20 focus:bg-white/10 transition-all duration-300 placeholder:text-white/40"
             required
             disabled={isLoading}
           />
@@ -82,7 +82,7 @@ function WaitlistInput() {
             <button
               type="submit"
               disabled={isLoading || !email}
-              className="px-6 py-2.5 text-sm font-medium text-black bg-white rounded-xl hover:bg-white/90 focus:outline-none focus:ring-2 focus:ring-white/20 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 transform hover:scale-[0.98] active:scale-[0.96]"
+              className="px-4 sm:px-6 py-2.5 text-xs sm:text-sm font-medium text-black bg-white rounded-xl hover:bg-white/90 focus:outline-none focus:ring-2 focus:ring-white/20 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 transform hover:scale-[0.98] active:scale-[0.96]"
             >
               {isLoading ? (
                 <span className="flex items-center gap-2">
@@ -105,10 +105,14 @@ function WaitlistInput() {
                       d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                     />
                   </svg>
-                  <span>Joining...</span>
+                  <span className="hidden sm:inline">Joining...</span>
+                  <span className="sm:hidden">...</span>
                 </span>
               ) : (
-                "Join Waitlist"
+                <>
+                  <span className="hidden sm:inline">Join Waitlist</span>
+                  <span className="sm:hidden">Join</span>
+                </>
               )}
             </button>
           </div>
@@ -117,7 +121,7 @@ function WaitlistInput() {
 
       {/* Message with animation */}
       <div
-        className={`mt-4 text-sm text-center transition-all duration-300 ${
+        className={`mt-4 text-sm text-center transition-all duration-300 px-4 ${
           message
             ? "opacity-100 translate-y-0"
             : "opacity-0 -translate-y-2 pointer-events-none"
