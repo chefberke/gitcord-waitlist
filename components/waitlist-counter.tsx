@@ -8,13 +8,20 @@ function WaitlistCounter() {
 
   const fetchCount = async () => {
     try {
-      const response = await fetch("/api/waitlist/count");
+      const response = await fetch(
+        "https://api.gitcord.pro/api/waitlist/count"
+      );
       const data = await response.json();
-      if (response.ok) {
-        setCount(data.count);
+      if (response.ok && data.success) {
+        // Updated to handle new response format
+        setCount(data.data?.count || 0);
+      } else {
+        console.error("Failed to fetch count:", data.error);
+        setCount(0);
       }
     } catch (error) {
       console.error("Failed to fetch count:", error);
+      setCount(0);
     } finally {
       setLoading(false);
     }
@@ -53,7 +60,7 @@ function WaitlistCounter() {
     <div className="flex flex-col items-center space-y-2 pl-2">
       <div className="flex items-baseline space-x-2">
         <span className="text-neutral-300">
-          {count !== null ? count.toLocaleString() : "0"}
+          {count !== null && count !== undefined ? count.toLocaleString() : "0"}
         </span>
         <span className="text-neutral-400">people already joined</span>
       </div>
