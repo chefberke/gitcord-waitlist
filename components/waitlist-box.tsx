@@ -8,7 +8,7 @@ function WaitlistBox() {
     <div className="flex items-center justify-center w-full flex-1">
       <div className="flex flex-col items-center justify-center gap-4">
         <div>
-          <h1 className="text-5xl text-center font-semibold">
+          <h1 className="text-6xl text-center font-semibold">
             The open source way to <br /> Track GitHub activity
           </h1>
         </div>
